@@ -1,45 +1,54 @@
 # AI-ECommerce-Search-And-Recommendation-Engine
 
-An **AI-powered e-commerce search and recommendation engine** built using **Elasticsearch vector search, semantic embeddings, and Streamlit**, designed to deliver **fast, intelligent product discovery** with real-time autocomplete, category browsing, and relevance-driven search experiences.
+An **AI-powered e-commerce search and recommendation engine** built using **Elasticsearch vector search, semantic embeddings, and Streamlit**, designed to deliver **fast, intelligent product discovery**, relevance-driven search, and item-to-item recommendations.
 
 ---
 
 ## 🚀 Features
 
 ### 🛍️ Browse Experience
-- **Category-first browsing UI** (Amazon / Flipkart–style)
-- Vertically stacked **categories**
-- Each category shows:
-  - 5 product cards in a **horizontal scroll**
-  - Lazy pagination via horizontal scroll (`>`)
-- Clicking a category:
-  - Redirects to **category-specific grid view**
-  - Displays **15 items per batch** (3 rows × 5 columns)
-  - Infinite vertical scroll
+- **Basic product browsing** from the home page
+- Displays a selection of items:
+  - **15 items per batch** (3 rows × 5 columns)
+- 📦 **Item cards display**:
+  - Product image  
+  - Product name  
+  - Brand  
+  - Price  
 
 ---
 
-### 🔍 Intelligent Search
-- **Search bar pinned at the top**
+### 🔍 AI-Driven Search
+- **Search bar at the top**
 - Supports:
-  - **Autocomplete suggestions** from Elasticsearch
-  - Suggestions include:
-    - Product name
-    - Category context
-    - Thumbnail image
-- Two search flows:
-  - Selecting an autocomplete suggestion → **direct semantic search**
-  - Pressing Enter without selecting → **free-text semantic + keyword search**
+  - Free-text **semantic + keyword search**
+- Returns **relevance-ranked results** using:
+  - Text matching
+  - Dense vector similarity
+  - Brand & category signals
 
 ---
 
-### 🎯 Context-Aware Search
-- **Global search** from home page (cross-catalog)
-- **Scoped search** inside a category (category-restricted results)
-- Powered by:
-  - Keyword matching
-  - Dense vector similarity
-  - Relevance boosting
+### 🎯 Product Detail Page (PDP) & Recommendations
+- **Items are clickable** from search results or browse grid
+- Clicking an item opens a **Product Detail Page (PDP)**
+- PDP displays:
+  - Product image
+  - Product name
+  - Brand
+  - Price
+- Bottom section shows:
+  - **5 closest alternative items**
+  - Generated using **vector similarity search**
+  - Recommendations are **cross-catalog and relevance-ranked**
+
+⚙️ Recommendation logic:
+- Based on **semantic embeddings**
+- Uses **cosine similarity** on product vectors
+- Supports:
+  - “Similar items”
+  - “You may also like”
+  - Substitute discovery
 
 ---
 
@@ -49,18 +58,15 @@ An **AI-powered e-commerce search and recommendation engine** built using **Elas
 - Hybrid ranking:
   - Text relevance
   - Semantic similarity
-  - Category & brand signals
+  - Brand & catalog signals
 
 ---
 
 ### ⚙️ Backend Capabilities
-- Elasticsearch aggregations for:
-  - Category discovery
-  - Item grouping
+- Elasticsearch aggregations for item grouping
 - Optimized indexing with:
   - Custom analyzers
   - Vector fields
-  - Autocomplete fields
 - Product ID (`pid`) used as **document ID** for consistency
 
 ---
