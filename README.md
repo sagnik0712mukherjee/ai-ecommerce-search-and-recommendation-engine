@@ -84,7 +84,7 @@ pip install -r requirements.txt
 - Create Index & Ingest Data (refer to "src/pipeline - one-time")
 - Run Streamlit App
 ```
-streamlit run app/streamlit_app.py
+streamlit run app/main.py
 ```
 
 ---
