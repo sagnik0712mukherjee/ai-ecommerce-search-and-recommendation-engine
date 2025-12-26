@@ -1,6 +1,6 @@
 # AI-ECommerce-Search-And-Recommendation-Engine
 
-An **AI-powered e-commerce search and recommendation engine** built using **Elasticsearch vector search, semantic embeddings, and Streamlit**, designed to deliver **fast, intelligent product discovery** with real-time autocomplete, category browsing, and relevance-driven search experiences — all from scratch.
+An **AI-powered e-commerce search and recommendation engine** built using **Elasticsearch vector search, semantic embeddings, and Streamlit**, designed to deliver **fast, intelligent product discovery** with real-time autocomplete, category browsing, and relevance-driven search experiences.
 
 ---
 
