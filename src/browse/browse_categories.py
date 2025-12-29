@@ -1,4 +1,4 @@
-from src.elastic_queries import browse_categories_query
+from src.services.elastic_query_service import browse_categories_query
 
 def get_all_categories(es, INDEX_NAME):
     """

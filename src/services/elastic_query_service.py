@@ -55,6 +55,7 @@ def search_query(query_vector, _from, size, _source = {"excludes": ["embedding"]
 
     return body
 
+
 def browse_categories_query():
 
     body = {
@@ -71,12 +72,52 @@ def browse_categories_query():
 
     return body
 
-def browse_items_query(size = 15):
+
+def browse_items_query(size = 15, _source = {"excludes": ["embedding"]}):
 
     body = {
+        "_source": _source,
         "size": size,
         "query": {
             "match_all": {}
+        }
+    }
+
+    return body
+
+
+def get_items_by_id_query(product_ids, _source = {"excludes": ["embedding"]}):
+    body = {
+        "_source": _source,
+        "size": len(product_ids),
+        "query": {
+            "terms": {
+                "product_id": product_ids
+            }
+        }
+    }
+
+    return body
+
+
+def get_cache_query(query, _type):
+    body = {
+        "size": 1,
+        "query": {
+            "bool": {
+                "must": [
+                    {
+                        "term": {
+                            "user_query.keyword": query
+                        }
+                    },
+                    {
+                        "term": {
+                            "_type.keyword": _type
+                        }
+                    }
+                ]
+            }
         }
     }
 

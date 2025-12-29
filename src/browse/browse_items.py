@@ -1,4 +1,4 @@
-from src.elastic_queries import browse_items_query
+from src.services.elastic_query_service import browse_items_query
 
 def get_all_items(es, INDEX_NAME, size = 15):
 
